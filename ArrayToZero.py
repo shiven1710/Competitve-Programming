@@ -1,0 +1,25 @@
+c=int(input())
+num=list(map(int,input().split()))
+x=0
+t=len(num)-1
+gbp=0
+while(x<len(num)):
+    it=0
+    if(x+t<len(num)):
+        while(num[x]>0):
+            num[x]=num[x]-1
+            num[x+t]=num[x+t]+1
+            it=it+1
+        gbp=gbp+(c*it)
+        x=x+1
+        t=t-1
+        if(t==0):
+            t=t+1
+    else:
+        while(num[x]>0):
+            num[x]=num[x]-1
+            it=it+1
+        gbp=gbp+(c*2*it)
+        x=x+1
+    print(num)
+print(gbp)
